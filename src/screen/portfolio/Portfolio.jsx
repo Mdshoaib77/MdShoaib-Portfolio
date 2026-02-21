@@ -358,10 +358,246 @@
 
 
 
+// import { motion } from "framer-motion";
+// import { GoArrowUpRight } from "react-icons/go";
+// import project1 from "../../../src/assets/zamans.png";
+// import project2 from "../../../src/assets/Foodessa.png"
+// import demoImage from "../../../src/assets/zamans.png";
+
+// const primary = "#8750f7";
+
+// export const Portfolio = () => {
+
+//   const projects = [
+//     {
+//       id: 1,
+//       title: "Zaman's Gadget",
+//       desc: "A complete MERN Stack e-commerce platform for browsing and purchasing gadgets online. This application allows users to view, search, and purchase various gadgets with a modern, responsive design and secure user authentication.",
+//       tech: [
+//         "React",
+//         "Tailwind CSS",
+//         "Node.js",
+//         "Express.js",
+//         "MongoDB",
+//         "JWT"
+//       ],
+//       image: project1,
+//       link: "https://zamansgadget.com/"
+//     },
+//     // {
+//     //   id: 2,
+//     //   title: "Demo MERN Project",
+//     //   desc: "Full MERN stack project with authentication system and modern UI dashboard.",
+//     //   tech: ["React", "Node.js", "MongoDB", "JWT"],
+//     //   image: project2,
+//     //   link: "https://foodessa.netlify.app/"
+//     // },
+//     {
+//   id: 2,
+//   title: "Foodessa – Full Stack Food Ordering App",
+//   desc: "A complete MERN stack food ordering platform with user authentication, category-based food browsing, cart system, and dedicated admin dashboard for managing foods and orders.",
+//   tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
+//   image: project2,
+//   link: "https://foodessa.netlify.app/"
+// },
+//     {
+//       id: 3,
+//       title: "E-Commerce Platform",
+//       desc: "Advanced shopping platform with cart system and payment gateway integration.",
+//       tech: ["MERN", "Stripe", "Redux"],
+//       image: demoImage,
+//       link: "#"
+//     },
+//     {
+//       id: 4,
+//       title: "Admin Dashboard",
+//       desc: "Modern admin dashboard with analytics and full management system.",
+//       tech: ["React", "Tailwind", "Node.js"],
+//       image: demoImage,
+//       link: "#"
+//     }
+//   ];
+
+//   return (
+//     <motion.section
+//       className="portfolio-section"
+//       initial={{ opacity: 0 }}
+//       animate={{ opacity: 1 }}
+//       transition={{ duration: 1 }}
+//       style={{ padding: "100px 0", background: "#0d0f14" }}
+//     >
+//       <div className="container">
+
+//         {/* SAME SECTION TITLE */}
+//         <div className="section-header text-center">
+//           {/* <motion.h2
+//             className="section-title"
+//             initial={{ opacity: 0, y: 50 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//           >
+//             My Recent Projects
+//           </motion.h2> */}
+//             <motion.h2
+//             className="section-title"
+//             initial={{ opacity: 0, y: 50 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//           >
+//             My Recent Works
+//           </motion.h2>
+//           <motion.p
+//             initial={{ opacity: 0, y: 50 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8, delay: 0.4 }}
+//           >
+//             I put your ideas and thus your wishes in the form of a unique web project that inspires you and your customers.
+//           </motion.p>
+//         </div>
+
+//         {/* GRID 2x2 Desktop */}
+//         <div
+//           style={{
+//             display: "grid",
+//             gridTemplateColumns: "repeat(auto-fit, minmax(550px, 1fr))",
+//             gap: "40px",
+//             marginTop: "60px"
+//           }}
+//         >
+//           {projects.map((project) => (
+//             <motion.div
+//               key={project.id}
+//               whileHover={{ y: -8 }}
+//               transition={{ duration: 0.3 }}
+//               style={{
+//                 background: "#111318",
+//                 borderRadius: "25px",
+//                 padding: "35px",
+//                 display: "flex",
+//                 gap: "35px",
+//                 flexWrap: "wrap",
+//                 border: "1px solid rgba(255,255,255,0.08)",
+//                 boxShadow: "0 0 40px rgba(0,0,0,0.5)"
+//               }}
+//             >
+
+//               {/* LEFT IMAGE */}
+//               <div
+//                 style={{
+//                   flex: "1 1 300px",
+//                   borderRadius: "20px",
+//                   overflow: "hidden"
+//                 }}
+//               >
+//                 <img
+//                   src={project.image}
+//                   alt={project.title}
+//                   style={{
+//                     width: "100%",
+//                     height: "100%",
+//                     objectFit: "cover",
+//                     borderRadius: "20px"
+//                   }}
+//                 />
+//               </div>
+
+//               {/* RIGHT CONTENT */}
+//               <div style={{ flex: "1 1 300px", color: "#fff" }}>
+
+//                 <div
+//                   style={{
+//                     display: "inline-block",
+//                     padding: "6px 18px",
+//                     borderRadius: "20px",
+//                     background: `${primary}20`,
+//                     color: primary,
+//                     fontSize: "12px",
+//                     marginBottom: "15px"
+//                   }}
+//                 >
+//                   MERN STACK
+//                 </div>
+
+//                 <h3 style={{ fontSize: "26px", marginBottom: "15px" }}>
+//                   {project.title}
+//                 </h3>
+
+//                 <p
+//                   style={{
+//                     color: "#aaa",
+//                     marginBottom: "20px",
+//                     lineHeight: "1.6"
+//                   }}
+//                 >
+//                   {project.desc}
+//                 </p>
+
+//                 {/* TECH TAGS */}
+//                 <div
+//                   style={{
+//                     display: "flex",
+//                     flexWrap: "wrap",
+//                     gap: "10px",
+//                     marginBottom: "25px"
+//                   }}
+//                 >
+//                   {project.tech.map((tech, i) => (
+//                     <span
+//                       key={i}
+//                       style={{
+//                         padding: "6px 14px",
+//                         borderRadius: "20px",
+//                         background: "#1b1f27",
+//                         border: `1px solid ${primary}`,
+//                         color: primary,
+//                         fontSize: "12px"
+//                       }}
+//                     >
+//                       {tech}
+//                     </span>
+//                   ))}
+//                 </div>
+
+//                 {/* LIVE LINK */}
+//                 <a
+//                   href={project.link}
+//                   target="_blank"
+//                   rel="noreferrer"
+//                   style={{
+//                     display: "inline-flex",
+//                     alignItems: "center",
+//                     gap: "8px",
+//                     padding: "12px 28px",
+//                     borderRadius: "30px",
+//                     background: primary,
+//                     color: "#fff",
+//                     fontWeight: "600",
+//                     textDecoration: "none"
+//                   }}
+//                 >
+//                   Live Preview <GoArrowUpRight />
+//                 </a>
+
+//               </div>
+
+//             </motion.div>
+//           ))}
+//         </div>
+
+//       </div>
+//     </motion.section>
+//   );
+// };
+
+
+
 import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import project1 from "../../../src/assets/zamans.png";
-import demoImage from "../../../src/assets/zamans.png";
+import project2 from "../../../src/assets/Foodessa.png";
+import project3 from "../../../src/assets/outfiro.png";
+import project4 from "../../../src/assets/realstate.png";
+
 
 const primary = "#8750f7";
 
@@ -371,153 +607,162 @@ export const Portfolio = () => {
     {
       id: 1,
       title: "Zaman's Gadget",
-      desc: "A complete MERN Stack e-commerce platform for browsing and purchasing gadgets online. This application allows users to view, search, and purchase various gadgets with a modern, responsive design and secure user authentication.",
-      tech: [
-        "React",
-        "Tailwind CSS",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "JWT"
-      ],
+      desc: "A complete MERN Stack e-commerce platform for browsing and purchasing gadgets online with secure authentication and modern UI experience.",
+      tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
       image: project1,
       link: "https://zamansgadget.com/"
     },
     {
       id: 2,
-      title: "Demo MERN Project",
-      desc: "Full MERN stack project with authentication system and modern UI dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "JWT"],
-      image: demoImage,
-      link: "#"
+      title: "Foodessa Food Ordering App",
+      desc: "A complete MERN stack food ordering platform with authentication, category filtering, cart system, and a powerful admin dashboard.",
+      tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT",],
+      image: project2,
+      link: "https://foodessa.netlify.app/"
     },
-    {
-      id: 3,
-      title: "E-Commerce Platform",
-      desc: "Advanced shopping platform with cart system and payment gateway integration.",
-      tech: ["MERN", "Stripe", "Redux"],
-      image: demoImage,
-      link: "#"
-    },
-    {
-      id: 4,
-      title: "Admin Dashboard",
-      desc: "Modern admin dashboard with analytics and full management system.",
-      tech: ["React", "Tailwind", "Node.js"],
-      image: demoImage,
-      link: "#"
-    }
+{
+  id: 3,
+  title: "Outfiro Fashion Store",
+  desc: "Modern fullstack dress selling platform featuring dynamic product listings, cart management, and secure payment gateway.",
+  tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
+  image: project3,
+  link: "https://outfiro.netlify.app/"
+},
+{
+  id: 4,
+  title: "Real Estate Platform",
+  desc: "Modern property listing platform with advanced search filters and secure management system.And Web3Forms contact handling.",
+  tech: ["React", "Tailwind", "web3form"],
+  image: project4,
+  link: "https://real-estate-vy0e.onrender.com/"
+}
   ];
 
   return (
-    <motion.section
-      className="portfolio-section"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      style={{ padding: "100px 0", background: "#0d0f14" }}
+    <section
+      style={{
+        padding: "120px 0",
+        background: "linear-gradient(180deg,#0d0f14 0%, #0b0c10 100%)"
+      }}
     >
       <div className="container">
 
-        {/* SAME SECTION TITLE */}
-        <div className="section-header text-center">
-          {/* <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 50 }}
+        {/* SECTION HEADER */}
+        <div style={{ textAlign: "center", marginBottom: "80px" }}>
+          <motion.h2
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          >
-            My Recent Projects
-          </motion.h2> */}
-            <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            style={{
+              fontSize: "48px",
+              fontWeight: "800",
+              background: "linear-gradient(90deg,#8750f7,#c084fc)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              marginBottom: "20px"
+            }}
           >
             My Recent Works
           </motion.h2>
+
           <motion.p
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            style={{
+              color: "#aaa",
+              maxWidth: "650px",
+              margin: "0 auto",
+              fontSize: "18px",
+              lineHeight: "1.6"
+            }}
           >
-            I put your ideas and thus your wishes in the form of a unique web project that inspires you and your customers.
+            I transform ideas into premium web experiences that inspire users
+            and deliver real-world solutions.
           </motion.p>
         </div>
 
-        {/* GRID 2x2 Desktop */}
+        {/* PROJECT GRID */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(550px, 1fr))",
-            gap: "40px",
-            marginTop: "60px"
+            gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
+            gap: "50px"
           }}
         >
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
+              whileHover={{ y: -12 }}
+              transition={{ duration: 0.4 }}
               style={{
-                background: "#111318",
-                borderRadius: "25px",
+                background: "rgba(255,255,255,0.03)",
+                backdropFilter: "blur(12px)",
+                borderRadius: "30px",
                 padding: "35px",
                 display: "flex",
-                gap: "35px",
-                flexWrap: "wrap",
+                flexDirection: "column",
+                gap: "25px",
                 border: "1px solid rgba(255,255,255,0.08)",
-                boxShadow: "0 0 40px rgba(0,0,0,0.5)"
+                boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+                transition: "all 0.4s ease"
               }}
             >
 
-              {/* LEFT IMAGE */}
+              {/* IMAGE */}
               <div
                 style={{
-                  flex: "1 1 300px",
                   borderRadius: "20px",
-                  overflow: "hidden"
+                  overflow: "hidden",
+                  position: "relative"
                 }}
               >
-                <img
+                <motion.img
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.6 }}
                   src={project.image}
                   alt={project.title}
                   style={{
                     width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "20px"
+                    borderRadius: "20px",
+                    objectFit: "cover"
                   }}
                 />
               </div>
 
-              {/* RIGHT CONTENT */}
-              <div style={{ flex: "1 1 300px", color: "#fff" }}>
+              {/* CONTENT */}
+              <div style={{ color: "#fff" }}>
 
                 <div
                   style={{
                     display: "inline-block",
                     padding: "6px 18px",
-                    borderRadius: "20px",
-                    background: `${primary}20`,
+                    borderRadius: "30px",
+                    background: `${primary}15`,
                     color: primary,
                     fontSize: "12px",
-                    marginBottom: "15px"
+                    marginBottom: "15px",
+                    letterSpacing: "1px"
                   }}
                 >
                   MERN STACK
                 </div>
 
-                <h3 style={{ fontSize: "26px", marginBottom: "15px" }}>
+                <h3
+                  style={{
+                    fontSize: "28px",
+                    fontWeight: "700",
+                    marginBottom: "15px"
+                  }}
+                >
                   {project.title}
                 </h3>
 
                 <p
                   style={{
-                    color: "#aaa",
-                    marginBottom: "20px",
-                    lineHeight: "1.6"
+                    color: "#b5b5b5",
+                    lineHeight: "1.7",
+                    marginBottom: "20px"
                   }}
                 >
                   {project.desc}
@@ -538,10 +783,11 @@ export const Portfolio = () => {
                       style={{
                         padding: "6px 14px",
                         borderRadius: "20px",
-                        background: "#1b1f27",
+                        background: "rgba(255,255,255,0.05)",
                         border: `1px solid ${primary}`,
                         color: primary,
-                        fontSize: "12px"
+                        fontSize: "12px",
+                        transition: "all 0.3s ease"
                       }}
                     >
                       {tech}
@@ -549,7 +795,7 @@ export const Portfolio = () => {
                   ))}
                 </div>
 
-                {/* LIVE LINK */}
+                {/* BUTTON */}
                 <a
                   href={project.link}
                   target="_blank"
@@ -558,24 +804,25 @@ export const Portfolio = () => {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "8px",
-                    padding: "12px 28px",
-                    borderRadius: "30px",
-                    background: primary,
+                    padding: "14px 30px",
+                    borderRadius: "40px",
+                    background: `linear-gradient(90deg,#8750f7,#c084fc)`,
                     color: "#fff",
                     fontWeight: "600",
-                    textDecoration: "none"
+                    textDecoration: "none",
+                    transition: "all 0.3s ease",
+                    boxShadow: "0 10px 25px rgba(135,80,247,0.4)"
                   }}
                 >
                   Live Preview <GoArrowUpRight />
                 </a>
 
               </div>
-
             </motion.div>
           ))}
         </div>
 
       </div>
-    </motion.section>
+    </section>
   );
 };
