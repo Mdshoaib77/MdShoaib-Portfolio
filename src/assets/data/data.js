@@ -31,26 +31,46 @@ export const hero = [
   },
 ];
 export const service = [
+  // {
+  //   id: 1,
+  //   title: "Web Design",
+  //   text: "I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people",
+  // },
+  // {
+  //   id: 2,
+  //   title: "UI/UX Design",
+  //   text: "I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people",
+  // },
+  // {
+  //   id: 3,
+  //   title: " Graphics Design",
+  //   text: "I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Branding Design",
+  //   text: "I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people",
+  // },
   {
-    id: 1,
-    title: "Web Design",
-    text: "I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people",
-  },
-  {
-    id: 2,
-    title: "UI/UX Design",
-    text: "I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people",
-  },
-  {
-    id: 3,
-    title: " Graphics Design",
-    text: "I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people",
-  },
-  {
-    id: 4,
-    title: "Branding Design",
-    text: "I break down complex user experinece problems to create integritiy focussed solutions that connect billions of people",
-  },
+  id: 1,
+  title: "Full Stack Engineering",
+  text: "I architect and develop scalable, high performance web applications using modern technologies to deliver secure and seamless digital products."
+},
+{
+  id: 2,
+  title: "Frontend Architecture",
+  text: "I craft responsive and visually engaging user interfaces with modern frameworks to ensure smooth interaction and refined digital experiences."
+},
+{
+  id: 3,
+  title: "Backend Systems Design",
+  text: "I build secure and efficient server side architectures with structured APIs and optimized databases for scalable applications."
+},
+{
+  id: 4,
+  title: "UI & Graphic Design",
+  text: "I create visually compelling interface designs and brand graphics that combine creativity with usability to deliver memorable digital identities."
+},
 ];
 
 export const projects = [
