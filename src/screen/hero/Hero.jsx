@@ -1255,6 +1255,512 @@
 
 
 
+// import { useEffect, useState } from "react";
+// import { useLocation } from "react-router-dom";
+// import { FaXTwitter } from "react-icons/fa6";
+// import { FaFacebookF, FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
+// import { hero } from "../../assets/data/data";
+// import { motion, AnimatePresence } from "framer-motion";
+
+// export const Hero = () => {
+//   const location = useLocation();
+
+//   /* ===============================
+//      TYPEWRITER NAME (ONLY ONCE)
+//   ================================== */
+//   const fullName = "Md Shoaib";
+//   const [displayName, setDisplayName] = useState("");
+//   const [typingIndex, setTypingIndex] = useState(0);
+
+//   useEffect(() => {
+//     if (typingIndex < fullName.length) {
+//       const timeout = setTimeout(() => {
+//         setDisplayName((prev) => prev + fullName[typingIndex]);
+//         setTypingIndex((prev) => prev + 1);
+//       }, 120);
+//       return () => clearTimeout(timeout);
+//     }
+//   }, [typingIndex]);
+
+//   /* ===============================
+//      SAME LENGTH TITLES ROTATION
+//   ================================== */
+//   const titles = [
+//     "Full Stack Web Engineer",
+//     "Creative UI Experience Dev",
+//     "Modern Frontend Architect",
+//     "Interactive Web Specialist"
+//   ];
+
+//   const [titleIndex, setTitleIndex] = useState(0);
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setTitleIndex((prev) => (prev + 1) % titles.length);
+//     }, 3000);
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   /* =============================== */
+
+//   useEffect(() => {
+//     if (location.state?.scrollToContact) {
+//       setTimeout(() => {
+//         const section = document.getElementById("contact-section");
+//         if (section) {
+//           section.scrollIntoView({ behavior: "smooth" });
+//         }
+//       }, 300);
+//     }
+//   }, [location]);
+
+//   const socialIcons = [
+//     { id: 1, icon: <FaXTwitter size={17} />, url: "https://x.com/mdshoaibdev" },
+//     { id: 2, icon: <FaFacebookF size={20} />, url: "https://www.facebook.com/md.shoaib.959839/" },
+//     { id: 3, icon: <FaLinkedinIn size={20} />, url: "https://www.linkedin.com/in/md-shoaib-07b32a314" },
+//     { id: 4, icon: <FaWhatsapp size={20} />, url: "https://wa.me/8801724519674" },
+//     { id: 5, icon: <FaInstagram size={20} />, url: "https://www.instagram.com/shoaib8749/" },
+//   ];
+
+//   return (
+//     <>
+//       <section className="hero-section">
+//         <motion.div
+//           className="intro_text"
+//           initial={{ opacity: 0, scale: 0.5 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 1.5, ease: "easeOut" }}
+//         >
+//           <svg viewBox="0 0 1320 300">
+//             <text x="50%" y="50%" textAnchor="middle">
+//               HI
+//             </text>
+//           </svg>
+//         </motion.div>
+
+//         <div className="container">
+//           <div className="content flexSB" style={{ flexWrap: "wrap" }}>
+
+//             {/* LEFT */}
+//             <div className="left w-half" style={{ minWidth: "300px" }}>
+//               <div className="hero-content-box">
+
+//                 {/* ===== Updated Name Styling ===== */}
+//                 <motion.span
+//                   className="hero-sub-title"
+//                   initial={{ opacity: 0, y: 30 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 1 }}
+//                 >
+//                   <span style={{ color: "#c084fc" }}>
+//                     I am
+//                   </span>{" "}
+//                   {/* <span
+//                     style={{
+//                       background:
+//                         "linear-gradient(90deg,#ffffff,#c084fc,#a855f7)",
+//                       WebkitBackgroundClip: "text",
+//                       WebkitTextFillColor: "transparent",
+//                     }}
+//                   >
+//                     {displayName}
+//                   </span> */}
+//                   {/* <span
+//   style={{
+//     color: "#ffffff",
+//     textShadow: "0 0 8px rgba(255,255,255,0.4)",
+//   }}
+// >
+//   {displayName}
+// </span> */}
+// <span
+//   style={{
+//     color: "#ffffff",
+//   }}
+// >
+//   {displayName}
+// </span>
+
+
+//                 </motion.span>
+
+//                 {/* ===== Rotating Titles (Purple Color) ===== */}
+//                 <div style={{ minHeight: "70px" }}>
+//                   <AnimatePresence mode="wait">
+//                     <motion.h1
+//                       key={titles[titleIndex]}
+//                       className="hero-title"
+//                       initial={{ opacity: 0, y: 30 }}
+//                       animate={{ opacity: 1, y: 0 }}
+//                       exit={{ opacity: 0, y: -30 }}
+//                       transition={{ duration: 0.6 }}
+//                       style={{
+//                         fontSize: "clamp(30px, 4vw, 56px)",
+//                         lineHeight: "1.2",
+//                         color: "#c084fc",
+//                       }}
+//                     >
+//                       {titles[titleIndex]}
+//                     </motion.h1>
+//                   </AnimatePresence>
+//                 </div>
+
+//                 <motion.p
+//                   className="lead"
+//                   initial={{ opacity: 0, y: 30 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 1.2, delay: 0.4 }}
+//                   style={{
+//                     fontSize: "clamp(14px, 2vw, 18px)",
+//                   }}
+//                 >
+//                   I break down complex user experience problems to create
+//                   integrity-focused solutions that connect billions of people.
+//                 </motion.p>
+
+//                 <motion.div
+//                   className="button-box flexG"
+//                   initial={{ opacity: 0, y: 30 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 1.2, delay: 0.5 }}
+//                   style={{
+//                     flexWrap: "wrap",
+//                     gap: "20px",
+//                   }}
+//                 >
+//                   <a
+//                     href="/MdShoaibResume.pdf"
+//                     download="Md_Shoaib_Resume"
+//                     className="btn tj-btn-primary"
+//                   >
+//                     Download CV
+//                   </a>
+
+//                   <ul
+//                     className="ul-reset social-icons"
+//                     style={{
+//                       display: "flex",
+//                       gap: "15px",
+//                       flexWrap: "wrap",
+//                     }}
+//                   >
+//                     {socialIcons.map((icon, index) => (
+//                       <motion.li
+//                         key={index}
+//                         initial={{ opacity: 0, x: -10 }}
+//                         animate={{ opacity: 1, x: 0 }}
+//                         transition={{
+//                           duration: 0.5,
+//                           delay: 0.6 + index * 0.15,
+//                         }}
+//                       >
+//                         <a
+//                           href={icon.url}
+//                           target="_blank"
+//                           rel="noopener noreferrer"
+//                         >
+//                           {icon.icon}
+//                         </a>
+//                       </motion.li>
+//                     ))}
+//                   </ul>
+//                 </motion.div>
+//               </div>
+//             </div>
+
+//             {/* RIGHT */}
+//             <div
+//               className="right w-half"
+//               style={{
+//                 textAlign: "center",
+//                 minWidth: "300px",
+//               }}
+//             >
+//               <div className="text-center hero-image-box">
+//                 <motion.img
+//                   src="../images/common/profile1.jpg"
+//                   alt="profile"
+//                   initial={{ opacity: 0, x: 100 }}
+//                   animate={{ opacity: 1, x: 0 }}
+//                   transition={{ duration: 1.5, delay: 0.7 }}
+//                   style={{
+//                     width: "100%",
+//                     maxWidth: "400px",
+//                     height: "auto",
+//                     objectFit: "cover",
+//                   }}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+
+//           {/* FUNFACT SAME */}
+//           <div
+//             className="funfact-area grid4"
+//             style={{
+//               display: "grid",
+//               gridTemplateColumns:
+//                 "repeat(auto-fit, minmax(160px, 1fr))",
+//               gap: "30px",
+//               marginTop: "80px",
+//             }}
+//           >
+//             {hero.map((item, index) => (
+//               <motion.div
+//                 className="funfact-item"
+//                 key={index}
+//                 initial={{ opacity: 0, y: 50 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 transition={{
+//                   duration: 1,
+//                   delay: 0.8 + index * 0.2,
+//                 }}
+//               >
+//                 <div
+//                   className="number"
+//                   style={{ fontSize: "28px", fontWeight: "700" }}
+//                 >
+//                   <span>{item.text}</span>
+//                 </div>
+//                 <div className="text">{item.title}</div>
+//               </motion.div>
+//             ))}
+//           </div>
+
+//         </div>
+//       </section>
+//     </>
+//   );
+// };
+
+
+// import { useEffect, useState } from "react";
+// import { useLocation } from "react-router-dom";
+// import { FaXTwitter } from "react-icons/fa6";
+// import { FaFacebookF, FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
+// import { hero } from "../../assets/data/data";
+// import { motion, AnimatePresence } from "framer-motion";
+
+// export const Hero = () => {
+//   const location = useLocation();
+
+//   /* ===============================
+//      TYPEWRITER NAME (ONLY ONCE)
+//   ================================== */
+//   const fullName = "Md Shoaib";
+//   const [displayName, setDisplayName] = useState("");
+//   const [typingIndex, setTypingIndex] = useState(0);
+
+//   useEffect(() => {
+//     if (typingIndex < fullName.length) {
+//       const timeout = setTimeout(() => {
+//         setDisplayName((prev) => prev + fullName[typingIndex]);
+//         setTypingIndex((prev) => prev + 1);
+//       }, 120);
+//       return () => clearTimeout(timeout);
+//     }
+//   }, [typingIndex]);
+
+//   /* ===============================
+//      SAME LENGTH TITLES ROTATION
+//   ================================== */
+//   const titles = [
+//     "Full Stack Web Engineer",
+//     "Creative UI Experience Dev",
+//     "Modern Frontend Architect",
+//     "Interactive Web Specialist"
+//   ];
+
+//   const [titleIndex, setTitleIndex] = useState(0);
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setTitleIndex((prev) => (prev + 1) % titles.length);
+//     }, 3000);
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   /* =============================== */
+
+//   useEffect(() => {
+//     if (location.state?.scrollToContact) {
+//       setTimeout(() => {
+//         const section = document.getElementById("contact-section");
+//         if (section) {
+//           section.scrollIntoView({ behavior: "smooth" });
+//         }
+//       }, 300);
+//     }
+//   }, [location]);
+
+//   const socialIcons = [
+//     { id: 1, icon: <FaXTwitter size={17} />, url: "https://x.com/mdshoaibdev" },
+//     { id: 2, icon: <FaFacebookF size={20} />, url: "https://www.facebook.com/md.shoaib.959839/" },
+//     { id: 3, icon: <FaLinkedinIn size={20} />, url: "https://www.linkedin.com/in/md-shoaib-07b32a314" },
+//     { id: 4, icon: <FaWhatsapp size={20} />, url: "https://wa.me/8801724519674" },
+//     { id: 5, icon: <FaInstagram size={20} />, url: "https://www.instagram.com/shoaib8749/" },
+//   ];
+
+//   return (
+//     <>
+//       <section className="hero-section">
+//         <motion.div
+//           className="intro_text"
+//           initial={{ opacity: 0, scale: 0.5 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 1.5, ease: "easeOut" }}
+//         >
+//           <svg viewBox="0 0 1320 300">
+//             <text x="50%" y="50%" textAnchor="middle">
+//               HI
+//             </text>
+//           </svg>
+//         </motion.div>
+
+//         <div className="container">
+//           <div className="content flexSB" style={{ flexWrap: "wrap" }}>
+
+//             {/* LEFT */}
+//             <div className="left w-half" style={{ minWidth: "300px" }}>
+//               <div className="hero-content-box">
+
+//                 {/* ===== Updated Name Styling ===== */}
+//                 <motion.span
+//                   className="hero-sub-title"
+//                   initial={{ opacity: 0, y: 30 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 1 }}
+//                 >
+//                   <span style={{ color: "#c084fc" }}>
+//                     I am
+//                   </span>{" "}
+// <span
+//   style={{
+//     color: "#ffffff",
+//   }}
+// >
+//   {displayName}
+// </span>
+
+
+//                 </motion.span>
+
+//                 {/* ===== Rotating Titles (Purple Color) ===== */}
+//                 <div style={{ minHeight: "70px" }}>
+//                   <AnimatePresence mode="wait">
+//                     <motion.h1
+//                       key={titles[titleIndex]}
+//                       className="hero-title"
+//                       initial={{ opacity: 0, y: 30 }}
+//                       animate={{ opacity: 1, y: 0 }}
+//                       exit={{ opacity: 0, y: -30 }}
+//                       transition={{ duration: 0.6 }}
+//                       style={{
+//                         fontSize: "clamp(30px, 4vw, 56px)",
+//                         lineHeight: "1.2",
+//                         color: "#c084fc",
+//                       }}
+//                     >
+//                       {titles[titleIndex]}
+//                     </motion.h1>
+//                   </AnimatePresence>
+//                 </div>
+
+//                 <motion.p
+//                   className="lead"
+//                   initial={{ opacity: 0, y: 30 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 1.2, delay: 0.4 }}
+//                   style={{
+//                     fontSize: "clamp(14px, 2vw, 18px)",
+//                   }}
+//                 >
+//                   I break down complex user experience problems to create
+//                   integrity-focused solutions that connect billions of people.
+//                 </motion.p>
+
+//                 <motion.div
+//                   className="button-box flexG"
+//                   initial={{ opacity: 0, y: 30 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 1.2, delay: 0.5 }}
+//                   style={{
+//                     flexWrap: "wrap",
+//                     gap: "20px",
+//                   }}
+//                 >
+//                   <a
+//                     href="/MdShoaibResume.pdf"
+//                     download="Md_Shoaib_Resume"
+//                     className="btn tj-btn-primary"
+//                   >
+//                     Download CV
+//                   </a>
+
+//                   <ul
+//                     className="ul-reset social-icons"
+//                     style={{
+//                       display: "flex",
+//                       gap: "15px",
+//                       flexWrap: "wrap",
+//                     }}
+//                   >
+//                     {socialIcons.map((icon, index) => (
+//                       <motion.li
+//                         key={index}
+//                         initial={{ opacity: 0, x: -10 }}
+//                         animate={{ opacity: 1, x: 0 }}
+//                         transition={{
+//                           duration: 0.5,
+//                           delay: 0.6 + index * 0.15,
+//                         }}
+//                       >
+//                         <a
+//                           href={icon.url}
+//                           target="_blank"
+//                           rel="noopener noreferrer"
+//                         >
+//                           {icon.icon}
+//                         </a>
+//                       </motion.li>
+//                     ))}
+//                   </ul>
+//                 </motion.div>
+//               </div>
+//             </div>
+
+//             {/* RIGHT */}
+//             <div
+//               className="right w-half"
+//               style={{
+//                 textAlign: "center",
+//                 minWidth: "300px",
+//               }}
+//             >
+//               <div className="text-center hero-image-box">
+//                 <motion.img
+//                   src="../images/common/profile1.jpg"
+//                   alt="profile"
+//                   initial={{ opacity: 0, x: 100 }}
+//                   animate={{ opacity: 1, x: 0 }}
+//                   transition={{ duration: 1.5, delay: 0.7 }}
+//                   style={{
+//                     width: "100%",
+//                     maxWidth: "400px",
+//                     height: "auto",
+//                     objectFit: "cover",
+//                   }}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </>
+//   );
+// };
+
+
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { FaXTwitter } from "react-icons/fa6";
@@ -1265,9 +1771,6 @@ import { motion, AnimatePresence } from "framer-motion";
 export const Hero = () => {
   const location = useLocation();
 
-  /* ===============================
-     TYPEWRITER NAME (ONLY ONCE)
-  ================================== */
   const fullName = "Md Shoaib";
   const [displayName, setDisplayName] = useState("");
   const [typingIndex, setTypingIndex] = useState(0);
@@ -1282,9 +1785,6 @@ export const Hero = () => {
     }
   }, [typingIndex]);
 
-  /* ===============================
-     SAME LENGTH TITLES ROTATION
-  ================================== */
   const titles = [
     "Full Stack Web Engineer",
     "Creative UI Experience Dev",
@@ -1301,19 +1801,6 @@ export const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  /* =============================== */
-
-  useEffect(() => {
-    if (location.state?.scrollToContact) {
-      setTimeout(() => {
-        const section = document.getElementById("contact-section");
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 300);
-    }
-  }, [location]);
-
   const socialIcons = [
     { id: 1, icon: <FaXTwitter size={17} />, url: "https://x.com/mdshoaibdev" },
     { id: 2, icon: <FaFacebookF size={20} />, url: "https://www.facebook.com/md.shoaib.959839/" },
@@ -1325,19 +1812,6 @@ export const Hero = () => {
   return (
     <>
       <section className="hero-section">
-        <motion.div
-          className="intro_text"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        >
-          <svg viewBox="0 0 1320 300">
-            <text x="50%" y="50%" textAnchor="middle">
-              HI
-            </text>
-          </svg>
-        </motion.div>
-
         <div className="container">
           <div className="content flexSB" style={{ flexWrap: "wrap" }}>
 
@@ -1345,46 +1819,18 @@ export const Hero = () => {
             <div className="left w-half" style={{ minWidth: "300px" }}>
               <div className="hero-content-box">
 
-                {/* ===== Updated Name Styling ===== */}
                 <motion.span
                   className="hero-sub-title"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1 }}
                 >
-                  <span style={{ color: "#c084fc" }}>
-                    I am
-                  </span>{" "}
-                  {/* <span
-                    style={{
-                      background:
-                        "linear-gradient(90deg,#ffffff,#c084fc,#a855f7)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    }}
-                  >
+                  <span style={{ color: "#c084fc" }}>I am </span>
+                  <span style={{ color: "#ffffff" }}>
                     {displayName}
-                  </span> */}
-                  {/* <span
-  style={{
-    color: "#ffffff",
-    textShadow: "0 0 8px rgba(255,255,255,0.4)",
-  }}
->
-  {displayName}
-</span> */}
-<span
-  style={{
-    color: "#ffffff",
-  }}
->
-  {displayName}
-</span>
-
-
+                  </span>
                 </motion.span>
 
-                {/* ===== Rotating Titles (Purple Color) ===== */}
                 <div style={{ minHeight: "70px" }}>
                   <AnimatePresence mode="wait">
                     <motion.h1
@@ -1418,6 +1864,7 @@ export const Hero = () => {
                   integrity-focused solutions that connect billions of people.
                 </motion.p>
 
+                {/* BUTTON + ICONS */}
                 <motion.div
                   className="button-box flexG"
                   initial={{ opacity: 0, y: 30 }}
@@ -1444,16 +1891,8 @@ export const Hero = () => {
                       flexWrap: "wrap",
                     }}
                   >
-                    {socialIcons.map((icon, index) => (
-                      <motion.li
-                        key={index}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.5,
-                          delay: 0.6 + index * 0.15,
-                        }}
-                      >
+                    {socialIcons.map((icon) => (
+                      <motion.li key={icon.id}>
                         <a
                           href={icon.url}
                           target="_blank"
@@ -1465,6 +1904,7 @@ export const Hero = () => {
                     ))}
                   </ul>
                 </motion.div>
+
               </div>
             </div>
 
@@ -1493,41 +1933,40 @@ export const Hero = () => {
               </div>
             </div>
           </div>
-
-          {/* FUNFACT SAME */}
-          <div
-            className="funfact-area grid4"
-            style={{
-              display: "grid",
-              gridTemplateColumns:
-                "repeat(auto-fit, minmax(160px, 1fr))",
-              gap: "30px",
-              marginTop: "80px",
-            }}
-          >
-            {hero.map((item, index) => (
-              <motion.div
-                className="funfact-item"
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.8 + index * 0.2,
-                }}
-              >
-                <div
-                  className="number"
-                  style={{ fontSize: "28px", fontWeight: "700" }}
-                >
-                  <span>{item.text}</span>
-                </div>
-                <div className="text">{item.title}</div>
-              </motion.div>
-            ))}
-          </div>
-
         </div>
+
+        {/* ✅ MOBILE ONLY FIX */}
+        <style>
+          {`
+          @media (max-width: 768px) {
+
+            .button-box {
+              display: flex !important;
+              flex-direction: column !important;
+              align-items: center !important;
+              gap: 15px !important;
+            }
+
+            .button-box .btn {
+              width: 100%;
+              max-width: 250px;
+              text-align: center;
+            }
+
+            .social-icons {
+              flex-wrap: nowrap !important;
+              justify-content: center !important;
+              width: 100%;
+            }
+
+            .social-icons li {
+              list-style: none;
+            }
+
+          }
+          `}
+        </style>
+
       </section>
     </>
   );

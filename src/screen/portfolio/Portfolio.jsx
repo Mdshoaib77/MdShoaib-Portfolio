@@ -827,6 +827,7 @@
 //   );
 // };
 
+
 import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import project1 from "../../../src/assets/zamans.png";
@@ -878,18 +879,10 @@ export const Portfolio = () => {
       style={{
         padding: "120px 0",
         background: "linear-gradient(180deg,#0d0f14 0%, #0b0c10 100%)",
-        overflowX: "hidden" // ✅ stop horizontal scroll
+        overflowX: "hidden" // 🔥 Prevent side scroll
       }}
     >
-      <div
-        className="container"
-        style={{
-          width: "100%",
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "0 20px"
-        }}
-      >
+      <div className="container" style={{ overflow: "hidden" }}>
 
         {/* SECTION HEADER */}
         <div style={{ textAlign: "center", marginBottom: "80px" }}>
@@ -928,9 +921,10 @@ export const Portfolio = () => {
 
         {/* PROJECT GRID */}
         <div
+          className="project-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", // ✅ responsive fix
+            gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
             gap: "50px"
           }}
         >
@@ -950,7 +944,8 @@ export const Portfolio = () => {
                 border: "1px solid rgba(255,255,255,0.08)",
                 boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
                 transition: "all 0.4s ease",
-                width: "100%"
+                width: "100%",
+                boxSizing: "border-box"
               }}
             >
 
@@ -958,9 +953,7 @@ export const Portfolio = () => {
               <div
                 style={{
                   borderRadius: "20px",
-                  overflow: "hidden",
-                  position: "relative",
-                  width: "100%"
+                  overflow: "hidden"
                 }}
               >
                 <motion.img
@@ -970,10 +963,8 @@ export const Portfolio = () => {
                   alt={project.title}
                   style={{
                     width: "100%",
-                    height: "auto",
                     borderRadius: "20px",
-                    objectFit: "cover",
-                    display: "block"
+                    objectFit: "cover"
                   }}
                 />
               </div>
@@ -1016,7 +1007,6 @@ export const Portfolio = () => {
                   {project.desc}
                 </p>
 
-                {/* TECH TAGS */}
                 <div
                   style={{
                     display: "flex",
@@ -1034,8 +1024,7 @@ export const Portfolio = () => {
                         background: "rgba(255,255,255,0.05)",
                         border: `1px solid ${primary}`,
                         color: primary,
-                        fontSize: "12px",
-                        transition: "all 0.3s ease"
+                        fontSize: "12px"
                       }}
                     >
                       {tech}
@@ -1043,7 +1032,6 @@ export const Portfolio = () => {
                   ))}
                 </div>
 
-                {/* BUTTON */}
                 <a
                   href={project.link}
                   target="_blank"
@@ -1058,7 +1046,6 @@ export const Portfolio = () => {
                     color: "#fff",
                     fontWeight: "600",
                     textDecoration: "none",
-                    transition: "all 0.3s ease",
                     boxShadow: "0 10px 25px rgba(135,80,247,0.4)"
                   }}
                 >
@@ -1071,6 +1058,18 @@ export const Portfolio = () => {
         </div>
 
       </div>
+
+      {/* 🔥 RESPONSIVE FIX */}
+      <style>
+        {`
+        @media (max-width: 768px) {
+          .project-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        `}
+      </style>
+
     </section>
   );
 };
