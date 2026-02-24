@@ -591,13 +591,248 @@
 
 
 
+// import { motion } from "framer-motion";
+// import { GoArrowUpRight } from "react-icons/go";
+// import project1 from "../../../src/assets/zamans.png";
+// import project2 from "../../../src/assets/Foodessa.png";
+// import project3 from "../../../src/assets/outfiro.png";
+// import project4 from "../../../src/assets/realstate.png";
+
+
+// const primary = "#8750f7";
+
+// export const Portfolio = () => {
+
+//   const projects = [
+//     {
+//       id: 1,
+//       title: "Zaman's Gadget",
+//       desc: "A complete MERN Stack e-commerce platform for browsing and purchasing gadgets online with secure authentication and modern UI experience.",
+//       tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
+//       image: project1,
+//       link: "https://zamansgadget.com/"
+//     },
+//     {
+//       id: 2,
+//       title: "Foodessa Food Ordering App",
+//       desc: "A complete MERN stack food ordering platform with authentication, category filtering, cart system, and a powerful admin dashboard.",
+//       tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT",],
+//       image: project2,
+//       link: "https://foodessa.netlify.app/"
+//     },
+// {
+//   id: 3,
+//   title: "Outfiro Fashion Store",
+//   desc: "Modern fullstack dress selling platform featuring dynamic product listings, cart management, and secure payment gateway.",
+//   tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
+//   image: project3,
+//   link: "https://outfiro.netlify.app/"
+// },
+// {
+//   id: 4,
+//   title: "Real Estate Platform",
+//   desc: "Modern property listing platform with advanced search filters and secure management system.And Web3Forms contact handling.",
+//   tech: ["React", "Tailwind", "web3form"],
+//   image: project4,
+//   link: "https://real-estate-vy0e.onrender.com/"
+// }
+//   ];
+
+//   return (
+//     <section
+//       style={{
+//         padding: "120px 0",
+//         background: "linear-gradient(180deg,#0d0f14 0%, #0b0c10 100%)"
+//       }}
+//     >
+//       <div className="container">
+
+//         {/* SECTION HEADER */}
+//         <div style={{ textAlign: "center", marginBottom: "80px" }}>
+//           <motion.h2
+//             initial={{ opacity: 0, y: 60 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8 }}
+//             style={{
+//               fontSize: "48px",
+//               fontWeight: "800",
+//               background: "linear-gradient(90deg,#8750f7,#c084fc)",
+//               WebkitBackgroundClip: "text",
+//               WebkitTextFillColor: "transparent",
+//               marginBottom: "20px"
+//             }}
+//           >
+//             My Recent Works
+//           </motion.h2>
+
+//           <motion.p
+//             initial={{ opacity: 0, y: 40 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.8, delay: 0.3 }}
+//             style={{
+//               color: "#aaa",
+//               maxWidth: "650px",
+//               margin: "0 auto",
+//               fontSize: "18px",
+//               lineHeight: "1.6"
+//             }}
+//           >
+//             I transform ideas into premium web experiences that inspire users
+//             and deliver real-world solutions.
+//           </motion.p>
+//         </div>
+
+//         {/* PROJECT GRID */}
+//         <div
+//           style={{
+//             display: "grid",
+//             gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
+//             gap: "50px"
+//           }}
+//         >
+//           {projects.map((project) => (
+//             <motion.div
+//               key={project.id}
+//               whileHover={{ y: -12 }}
+//               transition={{ duration: 0.4 }}
+//               style={{
+//                 background: "rgba(255,255,255,0.03)",
+//                 backdropFilter: "blur(12px)",
+//                 borderRadius: "30px",
+//                 padding: "35px",
+//                 display: "flex",
+//                 flexDirection: "column",
+//                 gap: "25px",
+//                 border: "1px solid rgba(255,255,255,0.08)",
+//                 boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+//                 transition: "all 0.4s ease"
+//               }}
+//             >
+
+//               {/* IMAGE */}
+//               <div
+//                 style={{
+//                   borderRadius: "20px",
+//                   overflow: "hidden",
+//                   position: "relative"
+//                 }}
+//               >
+//                 <motion.img
+//                   whileHover={{ scale: 1.05 }}
+//                   transition={{ duration: 0.6 }}
+//                   src={project.image}
+//                   alt={project.title}
+//                   style={{
+//                     width: "100%",
+//                     borderRadius: "20px",
+//                     objectFit: "cover"
+//                   }}
+//                 />
+//               </div>
+
+//               {/* CONTENT */}
+//               <div style={{ color: "#fff" }}>
+
+//                 <div
+//                   style={{
+//                     display: "inline-block",
+//                     padding: "6px 18px",
+//                     borderRadius: "30px",
+//                     background: `${primary}15`,
+//                     color: primary,
+//                     fontSize: "12px",
+//                     marginBottom: "15px",
+//                     letterSpacing: "1px"
+//                   }}
+//                 >
+//                   MERN STACK
+//                 </div>
+
+//                 <h3
+//                   style={{
+//                     fontSize: "28px",
+//                     fontWeight: "700",
+//                     marginBottom: "15px"
+//                   }}
+//                 >
+//                   {project.title}
+//                 </h3>
+
+//                 <p
+//                   style={{
+//                     color: "#b5b5b5",
+//                     lineHeight: "1.7",
+//                     marginBottom: "20px"
+//                   }}
+//                 >
+//                   {project.desc}
+//                 </p>
+
+//                 {/* TECH TAGS */}
+//                 <div
+//                   style={{
+//                     display: "flex",
+//                     flexWrap: "wrap",
+//                     gap: "10px",
+//                     marginBottom: "25px"
+//                   }}
+//                 >
+//                   {project.tech.map((tech, i) => (
+//                     <span
+//                       key={i}
+//                       style={{
+//                         padding: "6px 14px",
+//                         borderRadius: "20px",
+//                         background: "rgba(255,255,255,0.05)",
+//                         border: `1px solid ${primary}`,
+//                         color: primary,
+//                         fontSize: "12px",
+//                         transition: "all 0.3s ease"
+//                       }}
+//                     >
+//                       {tech}
+//                     </span>
+//                   ))}
+//                 </div>
+
+//                 {/* BUTTON */}
+//                 <a
+//                   href={project.link}
+//                   target="_blank"
+//                   rel="noreferrer"
+//                   style={{
+//                     display: "inline-flex",
+//                     alignItems: "center",
+//                     gap: "8px",
+//                     padding: "14px 30px",
+//                     borderRadius: "40px",
+//                     background: `linear-gradient(90deg,#8750f7,#c084fc)`,
+//                     color: "#fff",
+//                     fontWeight: "600",
+//                     textDecoration: "none",
+//                     transition: "all 0.3s ease",
+//                     boxShadow: "0 10px 25px rgba(135,80,247,0.4)"
+//                   }}
+//                 >
+//                   Live Preview <GoArrowUpRight />
+//                 </a>
+
+//               </div>
+//             </motion.div>
+//           ))}
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
 import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import project1 from "../../../src/assets/zamans.png";
 import project2 from "../../../src/assets/Foodessa.png";
 import project3 from "../../../src/assets/outfiro.png";
 import project4 from "../../../src/assets/realstate.png";
-
 
 const primary = "#8750f7";
 
@@ -616,36 +851,45 @@ export const Portfolio = () => {
       id: 2,
       title: "Foodessa Food Ordering App",
       desc: "A complete MERN stack food ordering platform with authentication, category filtering, cart system, and a powerful admin dashboard.",
-      tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT",],
+      tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
       image: project2,
       link: "https://foodessa.netlify.app/"
     },
-{
-  id: 3,
-  title: "Outfiro Fashion Store",
-  desc: "Modern fullstack dress selling platform featuring dynamic product listings, cart management, and secure payment gateway.",
-  tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
-  image: project3,
-  link: "https://outfiro.netlify.app/"
-},
-{
-  id: 4,
-  title: "Real Estate Platform",
-  desc: "Modern property listing platform with advanced search filters and secure management system.And Web3Forms contact handling.",
-  tech: ["React", "Tailwind", "web3form"],
-  image: project4,
-  link: "https://real-estate-vy0e.onrender.com/"
-}
+    {
+      id: 3,
+      title: "Outfiro Fashion Store",
+      desc: "Modern fullstack dress selling platform featuring dynamic product listings, cart management, and secure payment gateway.",
+      tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "JWT"],
+      image: project3,
+      link: "https://outfiro.netlify.app/"
+    },
+    {
+      id: 4,
+      title: "Real Estate Platform",
+      desc: "Modern property listing platform with advanced search filters and secure management system.And Web3Forms contact handling.",
+      tech: ["React", "Tailwind", "web3form"],
+      image: project4,
+      link: "https://real-estate-vy0e.onrender.com/"
+    }
   ];
 
   return (
     <section
       style={{
         padding: "120px 0",
-        background: "linear-gradient(180deg,#0d0f14 0%, #0b0c10 100%)"
+        background: "linear-gradient(180deg,#0d0f14 0%, #0b0c10 100%)",
+        overflowX: "hidden" // ✅ stop horizontal scroll
       }}
     >
-      <div className="container">
+      <div
+        className="container"
+        style={{
+          width: "100%",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          padding: "0 20px"
+        }}
+      >
 
         {/* SECTION HEADER */}
         <div style={{ textAlign: "center", marginBottom: "80px" }}>
@@ -686,7 +930,7 @@ export const Portfolio = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", // ✅ responsive fix
             gap: "50px"
           }}
         >
@@ -705,7 +949,8 @@ export const Portfolio = () => {
                 gap: "25px",
                 border: "1px solid rgba(255,255,255,0.08)",
                 boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
-                transition: "all 0.4s ease"
+                transition: "all 0.4s ease",
+                width: "100%"
               }}
             >
 
@@ -714,7 +959,8 @@ export const Portfolio = () => {
                 style={{
                   borderRadius: "20px",
                   overflow: "hidden",
-                  position: "relative"
+                  position: "relative",
+                  width: "100%"
                 }}
               >
                 <motion.img
@@ -724,8 +970,10 @@ export const Portfolio = () => {
                   alt={project.title}
                   style={{
                     width: "100%",
+                    height: "auto",
                     borderRadius: "20px",
-                    objectFit: "cover"
+                    objectFit: "cover",
+                    display: "block"
                   }}
                 />
               </div>
